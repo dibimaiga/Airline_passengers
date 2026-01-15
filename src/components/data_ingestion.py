@@ -6,6 +6,7 @@ import pandas as pd
 
 from src.exception import CustomException
 from src.logger import logging
+from src.components.data_transformation import DataTransformation,DataTransformationConfig
 
 @dataclass
 class DataIngestionConfig:
@@ -63,13 +64,12 @@ if __name__ == "__main__": #This code only runs when you execute this file direc
 # from src.components.data_ingestion import DataIngestion  # ✗ Code inside doesn't run
 
     obj = DataIngestion() #initialization(data ingestion object)
-    # train_data,test_data = 
-    obj.initiate_data_ingestion()
+    train_data,test_data = obj.initiate_data_ingestion()
 
 # #So abve we've combined dataingestion then down we've combined DataTransformation
     
-    # data_transformation = DataTransformation()  # To initialize (and you'll see that it will be able to call this self.data_transformation_config function)
-    # train_arr,test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data)
+    data_transformation = DataTransformation()  # To initialize (and you'll see that it will be able to call this self.data_transformation_config function)
+    train_arr,test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data)
 
 # #the third i don't need it cause i've already created the pkl file
 
