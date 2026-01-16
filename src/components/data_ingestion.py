@@ -7,6 +7,8 @@ import pandas as pd
 from src.exception import CustomException
 from src.logger import logging
 from src.components.data_transformation import DataTransformation,DataTransformationConfig
+from src.components.model_trainer import ModelTrainer,ModelTrainerConfig
+from src.utils import export_shap_analysis,load_object
 
 @dataclass
 class DataIngestionConfig:
@@ -69,12 +71,29 @@ if __name__ == "__main__": #This code only runs when you execute this file direc
 # #So abve we've combined dataingestion then down we've combined DataTransformation
     
     data_transformation = DataTransformation()  # To initialize (and you'll see that it will be able to call this self.data_transformation_config function)
-    train_arr,test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr,test_arr,preprocessor_path = data_transformation.initiate_data_transformation(train_data,test_data)
 
 # #the third i don't need it cause i've already created the pkl file
 
-# model_trainer = ModelTrainer()
+model_trainer = ModelTrainer()
 
-# print(model_trainer.initiate_model_trainer(train_arr,test_arr))
+results = model_trainer.initiate_model_trainer(train_arr,test_arr,threshold=0.6)
+print(results)
 
+# ========== OPTIONAL: SHAP EXPORT ==========
+if results['best_model_name'] == "Logistic Regression":
+    # Load preprocessor to get feature names
+    preprocessor = load_object(preprocessor_path)
+    feature_names = preprocessor.get_feature_names_out()
+    
+    # Export SHAP
+    shap_results = export_shap_analysis(
+        model=results['best_model'],
+        X_train_transformed=results['X_train'],
+        X_test_transformed=results['X_test'],
+        feature_names=feature_names,
+        output_dir="artifacts/shap"
+    )
+    
+    print(f"SHAP artifacts: {shap_results['output_dir']}")
 

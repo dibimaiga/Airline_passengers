@@ -1,0 +1,40 @@
+Feature,Mean_Abs_SHAP
+cat__Type of Travel_Personal Travel,1.588527954915959
+cat__Customer Type_disloyal Customer,1.080505061184396
+cat__Gender_Female,0.9726355851409553
+cat__Gender_Male,0.9654060783847285
+rating__Online boarding,0.960218682450113
+rating__Inflight wifi service,0.9314507391385669
+cat__Class_Eco,0.7507671250576439
+rating__missingindicator_Inflight wifi service,0.5116503226898477
+rating__Departure/Arrival time convenient,0.43331401728571733
+rating__Ease of Online booking,0.39474272666214333
+rating__On-board service,0.38415259018290204
+rating__Checkin service,0.3663370611041561
+rating__Leg room service,0.34683710764164133
+cat__Class_Business,0.304330685435366
+rating__Cleanliness,0.2651504576048324
+rating__Gate location,0.26325167810369676
+cat__Customer Type_Loyal Customer,0.19295879984807096
+cat__Class_Eco Plus,0.1884808703016771
+rating__Inflight service,0.15194411912103958
+rating__Baggage handling,0.1515208420852286
+cat__Type of Travel_Business travel,0.13477472095750428
+rating__Inflight entertainment,0.10628297358192115
+rating__missingindicator_Ease of Online booking,0.08266074465990214
+num__Arrival Delay in Minutes,0.07368268540122144
+rating__Food and drink,0.05636787784331247
+rating__missingindicator_Online boarding,0.030542154250022806
+rating__Seat comfort,0.030296962732725235
+num__Age,0.030192153510030927
+num__Flight Distance,0.025606694300063324
+rating__missingindicator_Departure/Arrival time convenient,0.025496191827491434
+rating__missingindicator_Inflight entertainment,0.001292762689177426
+rating__missingindicator_Food and drink,0.0008666958288760599
+rating__missingindicator_Leg room service,0.0006516036732110807
+rating__missingindicator_On-board service,0.00011863452804427315
+rating__missingindicator_Inflight service,0.00011863452804427315
+rating__missingindicator_Seat comfort,0.0
+rating__missingindicator_Checkin service,0.0
+rating__missingindicator_Cleanliness,0.0
+rating__missingindicator_Gate location,0.0
