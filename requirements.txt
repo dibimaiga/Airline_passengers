@@ -6,4 +6,5 @@ scikit-learn
 catboost
 xgboost
 shap
+Flask
 # -e . # to not build my package again and again and again (whenever i am performing pip install)

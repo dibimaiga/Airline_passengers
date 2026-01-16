@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passenger Satisfaction Predictor</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px; }
+        .form-group { margin: 15px 0; }
+        label { display: inline-block; width: 250px; font-weight: bold; }
+        input, select { width: 300px; padding: 5px; }
+        button { background: #007bff; color: white; padding: 10px 30px; border: none; cursor: pointer; margin-top: 20px; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1> Airline Passenger Satisfaction Predictor</h1>
+    <form action="/predict" method="POST">
+        <div class="form-group">
+            <label>Gender:</label>
+            <select name="Gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Customer Type:</label>
+            <select name="Customer Type" required>
+                <option value="Loyal Customer">Loyal Customer</option>
+                <option value="disloyal Customer">Disloyal Customer</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Age:</label>
+            <input type="number" name="Age" min="7" max="85" value="35" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Type of Travel:</label>
+            <select name="Type of Travel" required>
+                <option value="Business travel">Business travel</option>
+                <option value="Personal Travel">Personal Travel</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Class:</label>
+            <select name="Class" required>
+                <option value="Business">Business</option>
+                <option value="Eco">Eco</option>
+                <option value="Eco Plus">Eco Plus</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Flight Distance (miles):</label>
+            <input type="number" name="Flight Distance" value="1000" required>
+        </div>
+        
+        <h3>Service Ratings (0-5, 0 = Not Applicable)</h3>
+        
+        <div class="form-group">
+            <label>Inflight wifi service:</label>
+            <input type="number" name="Inflight wifi service" min="0" max="5" value="3" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Online boarding:</label>
+            <input type="number" name="Online boarding" min="0" max="5" value="4" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Seat comfort:</label>
+            <input type="number" name="Seat comfort" min="0" max="5" value="4" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Departure/Arrival time convenient:</label>
+            <input type="number" name="Departure/Arrival time convenient" min="0" max="5" value="3" required>
+        </div>
+
+        <div class="form-group">
+            <label>Ease of Online booking:</label>
+            <input type="number" name="Ease of Online booking" min="0" max="5" value="3" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gate location:</label>
+            <input type="number" name="Gate location" min="0" max="5" value="3" required>
+        </div>
+
+        <div class="form-group">
+            <label>Food and drink:</label>
+            <input type="number" name="Food and drink" min="0" max="5" value="3" required>
+        </div>
+
+        <div class="form-group">
+            <label>Inflight entertainment:</label>
+            <input type="number" name="Inflight entertainment" min="0" max="5" value="4" required>
+        </div>
+
+        <div class="form-group">
+            <label>On-board service:</label>
+            <input type="number" name="On-board service" min="0" max="5" value="4" required>
+        </div>
+
+        <div class="form-group">
+            <label>Leg room service:</label>
+            <input type="number" name="Leg room service" min="0" max="5" value="3" required>
+        </div>
+
+        <div class="form-group">
+            <label>Baggage handling:</label>
+            <input type="number" name="Baggage handling" min="0" max="5" value="4" required>
+        </div>
+
+        <div class="form-group">
+            <label>Checkin service:</label>
+            <input type="number" name="Checkin service" min="0" max="5" value="4" required>
+        </div>
+
+        <div class="form-group">
+            <label>Inflight service:</label>
+            <input type="number" name="Inflight service" min="0" max="5" value="4" required>
+        </div>
+
+        <div class="form-group">
+            <label>Cleanliness:</label>
+            <input type="number" name="Cleanliness" min="0" max="5" value="4" required>
+        </div>
+        
+        <h3>Delays</h3>
+        
+        <div class="form-group">
+            <label>Departure Delay (minutes):</label>
+            <input type="number" name="Departure Delay in Minutes" value="0" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Arrival Delay (minutes):</label>
+            <input type="number" name="Arrival Delay in Minutes" value="0" required>
+        </div>
+        
+        <button type="submit">Predict Satisfaction</button>
+    </form>
+</body>
+</html>

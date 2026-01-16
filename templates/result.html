@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px; text-align: center; }
+        .result-box { padding: 30px; border-radius: 10px; margin: 20px 0; }
+        .satisfied { background: #d4edda; color: #155724; }
+        .dissatisfied { background: #f8d7da; color: #721c24; }
+        .risk-high { color: #dc3545; font-weight: bold; }
+        .risk-medium { color: #ffc107; font-weight: bold; }
+        .risk-low { color: #28a745; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    
+    <div class="result-box {% if result.prediction == 'satisfied' %}satisfied{% else %}dissatisfied{% endif %}">
+        <h2>{{ result.prediction|upper }}</h2>
+        <p><strong>Probability:</strong> {{ (result.probability_satisfied * 100)|round(1) }}%</p>
+        <p class="risk-{{ result.risk_level }}"><strong>Risk Level:</strong> {{ result.risk_level|upper }}</p>
+        <p><strong>Recommended Action:</strong> {{ result.recommended_action }}</p>
+    </div>
+    
+    <a href="/"> Make Another Prediction</a>
+</body>
+</html>
